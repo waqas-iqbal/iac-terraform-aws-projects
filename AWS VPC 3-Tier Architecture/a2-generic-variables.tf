@@ -18,5 +18,5 @@ variable "environment" {
 variable "business_unit" {
   description = "The business unit responsible for the resources"
   type        = string
-  default     = "devops-team"
+  default     = "infra"
 }
