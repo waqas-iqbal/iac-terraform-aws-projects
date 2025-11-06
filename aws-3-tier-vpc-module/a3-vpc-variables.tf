@@ -4,7 +4,7 @@
 variable "vpc_name" {
   description = "The name of the VPC to be created"
   type        = string
-  default     = "vpc-dev"
+  default     = "vpc"
 }
 
 # VPC CIDR Block Variable
