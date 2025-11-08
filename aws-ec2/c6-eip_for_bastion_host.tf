@@ -7,10 +7,10 @@ resource "aws_eip" "bastion_eip" {
     Name = "${var.environment}-eip-${each.key}"
   })
 
-provisioner "local-exec" {
-  command = "echo \"AlDestroy time prov $(date)\" >> infra_destroy.log"
-  when    = destroy
-}
+  provisioner "local-exec" {
+    command = "echo \"AlDestroy time prov $(date)\" >> infra_destroy.log"
+    when    = destroy
+  }
 
   provisioner "local-exec" {
     command = "echo \"All Created time prov $(date)\" >> infra_create.log"

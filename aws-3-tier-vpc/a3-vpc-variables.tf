@@ -32,14 +32,14 @@ variable "public_subnets" {
 variable "private_subnets" {
   description = "List of private subnet CIDR blocks"
   type        = list(string)
-  default     = ["10.0.51.0/24", "10.0.52.0/24"]
+  default     = ["10.0.3.0/24", "10.0.4.0/24"]
 }
 
 # Database Subnets Variable
 variable "database_subnets" {
   description = "List of database subnet CIDR blocks"
   type        = list(string)
-  default     = ["10.0.101.0/24", "10.0.102.0/24"]
+  default     = ["10.0.5.0/24", "10.0.6.0/24"]
 }
 
 # Enable NAT Gateway Variable

@@ -1,5 +1,5 @@
 resource "null_resource" "copy_key_to_bastions" {
-  for_each = module.pub-ec2-instance
+  for_each   = module.pub-ec2-instance
   depends_on = [module.pub-ec2-instance]
 
   connection {

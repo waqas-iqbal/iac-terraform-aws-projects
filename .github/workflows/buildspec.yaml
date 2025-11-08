@@ -1,0 +1,53 @@
+name: Deploying AWS Infra using Terraform and Github Actions CICD pipeline
+on:
+# Manual trigger for deploying specific modules
+  workflow_dispatch:
+    inputs:
+      modules:
+        description: 'Select the module to deploy'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - aws-vpc
+          - aws-ec2
+      
+      environemnt: 
+        description: 'Select the environment'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+      
+        action:
+          description: 'Terrform Action'
+          required: true
+          default: 'plan'
+          type: choice
+          options:
+            - plan
+            - apply
+            - destroy
+
+
+  # Automatic trigger on push or pull request to main branch
+  push:
+    branches:
+      - main
+    paths:
+      - 'aws-3-tier-vpc/**'
+    pull_request:
+      branches:
+        - main
+      paths:
+        - 'aws-3-tier-vpc/**'
+
+jobs:
+  terraform:
+    name: 'Terraform AWS Infra Deployment'
+    runs-on: ubuntu-latest
+    environment: 

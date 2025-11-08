@@ -14,3 +14,10 @@ variable "key_name" {
   default     = "DevOps"
 }
 
+# Path to Private Key File
+variable "private_key_path" {
+  description = "Path to the private key file for SSH access"
+  type        = string
+  default     = "/home/ec2-user/private_key/DevOps.pem"
+}
+

@@ -15,7 +15,7 @@ module "ec2-instance" {
   key_name      = var.key_name
 
   vpc_security_group_ids = [module.private-sg.security_group_id]
-  subnet_id = module.dev-vpc.private_subnets[each.value]
-  user_data = file("app-install.sh")
-  tags      = local.common_tags
+  subnet_id              = module.dev-vpc.private_subnets[each.value]
+  user_data              = file("app-install.sh")
+  tags                   = local.common_tags
 }   
