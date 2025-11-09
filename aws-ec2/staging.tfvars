@@ -14,4 +14,4 @@ single_nat_gateway                 = true
 
 # EC2 Instance Variables
 instance_type    = "t3.small"
-instance_keypair = "DevOps"
+key_name = "DevOps"
